@@ -66,5 +66,4 @@ public class Product {
 	public double getInventoryPrice() {
 		return this.price * this.quantity;	// calculate total inventory price
 	}
-}
 
