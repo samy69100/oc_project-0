@@ -1,7 +1,7 @@
 package com.lambazon.domain;
 
 public class Product {
-	
+
 	private Integer id;
 	private String name, description, details;
 	private int quantity;
@@ -52,7 +52,12 @@ public class Product {
 	}
 
 	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+		if( quantity < 0 ) {				// if number negative, set to zero
+			this.quantity = 0;
+		}
+		else {
+			this.quantity = quantity;
+		}
 	}
 
 	public double getPrice() {
@@ -60,10 +65,18 @@ public class Product {
 	}
 
 	public void setPrice(double price) {
-		this.price = price;
+		if( price < 0 ) {		// if negative
+			this.price = 0;
+		}
+		else if( price > 1000 ) {	// if upper at 1000
+			this.price = 1000;
+		}
+		else {		// if all ready
+			this.price = price;
+		}
 	}
 
 	public double getInventoryPrice() {
-		return this.price * this.quantity;	// calculate total inventory price
+		return this.price * this.quantity;			// calculation of total inventory price
 	}
-
+}
