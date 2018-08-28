@@ -64,7 +64,7 @@ public class Product {
 	}
 
 	public double getInventoryPrice() {
-		// TODO Auto-generated method stub
-		return 0.0;
+		return this.price * this.quantity;	// calculate total inventory price
 	}
 }
+
