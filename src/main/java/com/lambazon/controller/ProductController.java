@@ -32,7 +32,7 @@ public class ProductController {
 
 	private double calculateTotalInventoryAmount() {
 		// calculation fix
-		double totalInventoryAmount = 0.0f;			// storing total and retrun to end
+		double totalInventoryAmount = 0.0f;			// storing total and return to end
 		for( Product ps : productService.products() ) {			// all products
 			totalInventoryAmount += ps.getInventoryPrice();		// total value and add total
 		}
